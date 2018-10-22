@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sahisingh.popularmoviesstage1.Models.MovieDetails;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -47,7 +48,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull MovieHolder holder, int position) {
         MovieDetails movieDetails = movieDetailsList.get(position);
 
-        Log.d("SETTING", "onBindViewHolder: " + position + movieDetails.getName());
+        Log.d("SETTING", "onBindViewHolder: " + position + movieDetails.getTittle());
         holder.setData(movieDetails);
 
 
@@ -56,10 +57,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class MovieHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 //        ImageView movieImageView;
         TextView textView ;
+        ImageView movieImageView;
         MovieDetails movieDetails;
         MovieHolder(View movieView){
             super(movieView);
-//            movieImageView = movieView.findViewById(R.id.imageView);
+            movieImageView = movieView.findViewById(R.id.imageView);
             textView = movieView.findViewById(R.id.textView);
 
             textView.setOnClickListener(this);
@@ -72,7 +74,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public void setData(MovieDetails movieDetails){
             this.movieDetails = movieDetails;
-            textView.setText(movieDetails.getName());
+            textView.setText(movieDetails.getTittle());
+
 
         }
     }
