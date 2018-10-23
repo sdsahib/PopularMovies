@@ -3,7 +3,7 @@ package com.example.sahisingh.popularmoviesstage1.utilities;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.sahisingh.popularmoviesstage1.MainActivity;
+import com.example.sahisingh.popularmoviesstage1.Activities.MainActivity;
 import com.example.sahisingh.popularmoviesstage1.Models.MovieDetails;
 
 import org.json.JSONArray;
@@ -15,7 +15,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 public class MoviesTask extends AsyncTask<URL,Void, ArrayList<MovieDetails>> {
 

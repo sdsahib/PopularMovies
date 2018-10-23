@@ -18,7 +18,27 @@ public class NetworkUtil {
     public static URL buildMostPopularMovieUrl(){
         Uri buildUri = Uri.parse(THE_MOVIE_DB_BASE_URL).buildUpon().
                 appendQueryParameter("sort_by","popularity.desc")
-                .appendQueryParameter("api_key","inserttheapi")
+                .appendQueryParameter("api_key","1d96fca82c21d87478c29792f878e414")
+                .build();
+
+        URL url = null;
+        try {
+            url = new URL(buildUri.toString());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        return url;
+    }
+
+    public static URL buildHighestRatedMovieUrl(){
+
+
+        Uri buildUri = Uri.parse(THE_MOVIE_DB_BASE_URL).buildUpon().
+                appendQueryParameter("certification_country","US").
+                appendQueryParameter("certification","R").
+                appendQueryParameter("sort_by","vote_average.desc")
+                .appendQueryParameter("api_key","1d96fca82c21d87478c29792f878e414")
                 .build();
 
         URL url = null;

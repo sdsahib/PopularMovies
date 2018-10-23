@@ -21,7 +21,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private MovieItemClickListener movieItemClickListener;
     private LayoutInflater movieLayoutInflater;
 
-    RecyclerViewAdapter(Context context, MovieItemClickListener movieItemClickListener,List<MovieDetails> movieDetails){
+    public RecyclerViewAdapter(Context context, MovieItemClickListener movieItemClickListener, List<MovieDetails> movieDetails){
         this.movieDetailsList = movieDetails;
         this.movieLayoutInflater = LayoutInflater.from(context);
         this.movieItemClickListener = movieItemClickListener;
@@ -56,15 +56,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class MovieHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 //        ImageView movieImageView;
-        TextView textView ;
+//        TextView textView ;
         ImageView movieImageView;
         MovieDetails movieDetails;
         MovieHolder(View movieView){
             super(movieView);
             movieImageView = movieView.findViewById(R.id.imageView);
-            textView = movieView.findViewById(R.id.textView);
+//            textView = movieView.findViewById(R.id.textView);
+            movieView.setOnClickListener(this);
 
-            textView.setOnClickListener(this);
         }
         @Override
         public void onClick(View view) {
@@ -74,8 +74,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public void setData(MovieDetails movieDetails){
             this.movieDetails = movieDetails;
-            textView.setText(movieDetails.getTittle());
-
+//            textView.setText(movieDetails.getTittle());
+            Picasso.get().load(movieDetails.getModifiedPosterPath()).into(movieImageView);
 
         }
     }
