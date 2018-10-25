@@ -3,15 +3,9 @@ package com.example.sahisingh.popularmoviesstage1.Models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.Date;
+import com.example.sahisingh.popularmoviesstage1.Constants;
 
 public class MovieDetails implements Parcelable {
-    private String tittle;
-    private String posterPath;
-    private float vote_average;
-    private String overview;
-    private Date release_date;
-
     public static final Creator<MovieDetails> CREATOR = new Creator<MovieDetails>() {
         @Override
         public MovieDetails createFromParcel(Parcel in) {
@@ -23,11 +17,29 @@ public class MovieDetails implements Parcelable {
             return new MovieDetails[size];
         }
     };
+    private String tittle;
+    private String posterPath;
+    private float vote_average;
+    private String overview;
+    private String release_date;
 
-    public String getModifiedPosterPath(){
-        String modifiedPosterPath = "http://image.tmdb.org/t/p/";
-        modifiedPosterPath += "w342";
-        modifiedPosterPath +=getPosterPath();
+    public MovieDetails() {
+    }
+
+    private MovieDetails(Parcel in) {
+
+        this.tittle = in.readString();
+        this.posterPath = in.readString();
+        this.vote_average = in.readFloat();
+        this.overview = in.readString();
+
+        this.release_date = in.readString();
+    }
+
+    public String getModifiedPosterPath() {
+        String modifiedPosterPath = Constants.BASEURL;
+        modifiedPosterPath += Constants.BASESIZE;
+        modifiedPosterPath += getPosterPath();
         return modifiedPosterPath;
     }
 
@@ -55,15 +67,12 @@ public class MovieDetails implements Parcelable {
         this.overview = overview;
     }
 
-    public Date getRelease_date() {
+    public String getRelease_date() {
         return release_date;
     }
 
-    public void setRelease_date(Date release_date) {
+    public void setRelease_date(String release_date) {
         this.release_date = release_date;
-    }
-
-    public MovieDetails() {
     }
 
     public String getTittle() {
@@ -85,13 +94,7 @@ public class MovieDetails implements Parcelable {
         parcel.writeString(posterPath);
         parcel.writeFloat(vote_average);
         parcel.writeString(overview);
-        parcel.writeLong(release_date.getTime());
+        parcel.writeString(release_date);
     }
-
-    protected MovieDetails(Parcel in){
-        long tmpDate = in.readLong();
-        this.release_date = tmpDate == -1 ? null : new Date(tmpDate);
-    }
-
 
 }

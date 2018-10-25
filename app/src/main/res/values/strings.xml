@@ -5,4 +5,7 @@
     <string name="most_popular">Most Popular</string>
     <string name="highest_rated">Highest Rated</string>
     <string name="no_internet">No Internet Found</string>
+    <string name="connection_warning">"Connect your device with Internet and re run the app"</string>
+    <string name="movie_detail">"Movie Detail</string>
+    <string name="image_description">Poster image of the Movie</string>
 </resources>

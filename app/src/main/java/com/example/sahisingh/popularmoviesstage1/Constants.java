@@ -1,0 +1,42 @@
+package com.example.sahisingh.popularmoviesstage1;
+
+public class Constants {
+    public final static String RESULTS;
+    public final static String POSTERPATH;
+    public final static String OVERVIEW;
+    public final static String RELEASEDATE;
+    public final static String VOTEAVERAGE;
+    public final static String BASEURL;
+    public final static String BASESIZE;
+    public final static String THE_MOVIE_DB_BASE_URL;
+    public final static String SORTBY;
+    public final static String APIKEY;
+    public final static String SORTBYPOPULARITY;
+    public final static String APIKEYVALUE;
+    public final static String CERTIFICATIONCOUNTRY;
+    public final static String CERTIFICATION;
+    public final static String CERTIFICATIONCOUNTRYUS;
+    public final static String CERTIFICATION_R;
+    public final static String VOTEAVERAGE_DESC;
+
+    static {
+        RESULTS = "results";
+        POSTERPATH = "poster_path";
+        OVERVIEW = "overview";
+        RELEASEDATE = "release_date";
+        VOTEAVERAGE = "vote_average";
+        BASEURL = "http://image.tmdb.org/t/p/";
+        BASESIZE = "w342";
+        THE_MOVIE_DB_BASE_URL = "http://api.themoviedb.org/3/discover/movie";
+        SORTBY = "sort_by";
+        APIKEY = "api_key";
+        SORTBYPOPULARITY = "popularity.desc";
+        APIKEYVALUE = "1d96fca82c21d87478c29792f878e414";
+        CERTIFICATIONCOUNTRY = "certification_country";
+        CERTIFICATION = "certification";
+        CERTIFICATIONCOUNTRYUS = "US";
+        CERTIFICATION_R = "R";
+        VOTEAVERAGE_DESC = "vote_average.desc";
+
+    }
+}

@@ -2,23 +2,22 @@ package com.example.sahisingh.popularmoviesstage1.utilities;
 
 import android.net.Uri;
 
+import com.example.sahisingh.popularmoviesstage1.Constants;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import java.util.Scanner;
 
 public class NetworkUtil {
 
-    final static String THE_MOVIE_DB_BASE_URL = "http://api.themoviedb.org/3/discover/movie";
 
-
-    public static URL buildMostPopularMovieUrl(){
-        Uri buildUri = Uri.parse(THE_MOVIE_DB_BASE_URL).buildUpon().
-                appendQueryParameter("sort_by","popularity.desc")
-                .appendQueryParameter("api_key","1d96fca82c21d87478c29792f878e414")
+    public static URL buildMostPopularMovieUrl() {
+        Uri buildUri = Uri.parse(Constants.THE_MOVIE_DB_BASE_URL).buildUpon().
+                appendQueryParameter(Constants.SORTBY, Constants.SORTBYPOPULARITY)
+                .appendQueryParameter(Constants.APIKEY, Constants.APIKEYVALUE)
                 .build();
 
         URL url = null;
@@ -31,14 +30,14 @@ public class NetworkUtil {
         return url;
     }
 
-    public static URL buildHighestRatedMovieUrl(){
+    public static URL buildHighestRatedMovieUrl() {
 
 
-        Uri buildUri = Uri.parse(THE_MOVIE_DB_BASE_URL).buildUpon().
-                appendQueryParameter("certification_country","US").
-                appendQueryParameter("certification","R").
-                appendQueryParameter("sort_by","vote_average.desc")
-                .appendQueryParameter("api_key","1d96fca82c21d87478c29792f878e414")
+        Uri buildUri = Uri.parse(Constants.THE_MOVIE_DB_BASE_URL).buildUpon().
+                appendQueryParameter(Constants.CERTIFICATIONCOUNTRY, Constants.CERTIFICATIONCOUNTRYUS).
+                appendQueryParameter(Constants.CERTIFICATION, Constants.CERTIFICATION_R).
+                appendQueryParameter(Constants.SORTBY, Constants.VOTEAVERAGE_DESC)
+                .appendQueryParameter(Constants.APIKEY, Constants.APIKEYVALUE)
                 .build();
 
         URL url = null;
