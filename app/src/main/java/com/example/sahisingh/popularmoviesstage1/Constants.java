@@ -31,7 +31,7 @@ public class Constants {
         SORTBY = "sort_by";
         APIKEY = "api_key";
         SORTBYPOPULARITY = "popularity.desc";
-        APIKEYVALUE = "1d96fca82c21d87478c29792f878e414";
+        APIKEYVALUE = "YOUR_API_KEY";
         CERTIFICATIONCOUNTRY = "certification_country";
         CERTIFICATION = "certification";
         CERTIFICATIONCOUNTRYUS = "US";
