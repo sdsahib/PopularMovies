@@ -15,9 +15,8 @@ public class NetworkUtil {
 
 
     public static URL buildMostPopularMovieUrl() {
-        Uri buildUri = Uri.parse(Constants.THE_MOVIE_DB_BASE_URL).buildUpon().
-                appendQueryParameter(Constants.SORTBY, Constants.SORTBYPOPULARITY)
-                .appendQueryParameter(Constants.APIKEY, Constants.APIKEYVALUE)
+        Uri buildUri = Uri.parse(Constants.POPULAR_API).buildUpon().
+                appendQueryParameter(Constants.APIKEY, Constants.APIKEYVALUE)
                 .build();
 
         URL url = null;
@@ -34,10 +33,7 @@ public class NetworkUtil {
     public static URL buildHighestRatedMovieUrl() {
 
 
-        Uri buildUri = Uri.parse(Constants.THE_MOVIE_DB_BASE_URL).buildUpon().
-                appendQueryParameter(Constants.CERTIFICATIONCOUNTRY, Constants.CERTIFICATIONCOUNTRYUS).
-                appendQueryParameter(Constants.CERTIFICATION, Constants.CERTIFICATION_R).
-                appendQueryParameter(Constants.SORTBY, Constants.VOTEAVERAGE_DESC)
+        Uri buildUri = Uri.parse(Constants.TOP_RATED).buildUpon()
                 .appendQueryParameter(Constants.APIKEY, Constants.APIKEYVALUE)
                 .build();
 

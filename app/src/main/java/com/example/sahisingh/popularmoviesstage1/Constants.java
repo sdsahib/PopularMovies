@@ -18,6 +18,8 @@ public class Constants {
     public final static String CERTIFICATIONCOUNTRYUS;
     public final static String CERTIFICATION_R;
     public final static String VOTEAVERAGE_DESC;
+    public final static String POPULAR_API;
+    public final static String TOP_RATED;
 
     static {
         RESULTS = "results";
@@ -27,7 +29,9 @@ public class Constants {
         VOTEAVERAGE = "vote_average";
         BASEURL = "http://image.tmdb.org/t/p/";
         BASESIZE = "w342";
-        THE_MOVIE_DB_BASE_URL = "http://api.themoviedb.org/3/discover/movie";
+        THE_MOVIE_DB_BASE_URL = "http://api.themoviedb.org/3/movie/";
+        POPULAR_API = THE_MOVIE_DB_BASE_URL+ "popular";
+        TOP_RATED = THE_MOVIE_DB_BASE_URL + "top_rated";
         SORTBY = "sort_by";
         APIKEY = "api_key";
         SORTBYPOPULARITY = "popularity.desc";
